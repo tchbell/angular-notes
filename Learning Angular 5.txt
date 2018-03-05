@@ -1,0 +1,31 @@
+Getting started with Angular 5
+
+Links on good places to start learning: https://angular.io/guide/quickstart, https://www.toptal.com/angular/angular-5-tutorial
+
+First you have to install Angular CLI globally: npm install -g @angular/cli
+
+Once that downloaded you will generate a new project with
+ ng new project-name 
+ex: ng new my-app will create an Angular project called my-app
+
+Then cd into your project folder and run ng serve --open to get your project running.
+
+Most of the files you will be working with are in the src/app folder
+
+Angular 5 works with components mainly. Each component folder will hold all the files you need for each componenet. It will have the template for your HTML, your CSS for your styles, component information, and testing files. When you create your project Angular will create a starting component for you.
+
+Angular 5 is done all in Typescript which is just a superset of Javascript. 
+More on TypeScript can be found here: https://www.typescriptlang.org/
+
+The file that will hold all the important information about your component is your component.ts file. 
+
+Each file can be broken down into three parts. The top is where you will import all your dependencies. Similar to how services got injected in AngularJs, the component decorator which stores the information about the component's files and it stores the selector which is the name of your component and how you will call your component in the html, last is the export class component where all your logic is stored for the application.
+
+When you want to create a new component its best to leave the terminal that is running your application alone and open a new one. Then you will run ng generate component component name. 
+ex: ng generate component header
+This will generate a new component inside the src/app folder called header.
+The short hand of this operation is ng g c header.
+
+Once you have created your new component you will want to nest it into your app.component.html file for it to show up. To do that you will look in your new component.ts folder and find the selector name. If the component name is header the selector name will be app-header. THen you just add the component selector name inside <> tags like so <app-header></app-header> and you will see your header.component.html file show up on the home page.
+
+In your index.html there is an app-root tag which is why your initial component is showing up. So when you nest your new component selector tag inside the initial component template your new code shows up.
